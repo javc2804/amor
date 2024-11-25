@@ -4,22 +4,139 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Primer Mes de Noviazgo</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background-color: #ffe6e6;
+        font-family: "Cursive", sans-serif;
+        color: #b30000;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .container {
+        padding: 20px;
+        border: 2px solid #ff9999;
+        border-radius: 15px;
+        background-color: #fff0f5;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+      }
+
+      .photo-container {
+        margin-top: 20px;
+      }
+
+      .romantic-photo {
+        width: 300px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        transform: rotate(-45deg);
+        animation: float 5s infinite;
+      }
+
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+      }
+
+      .heart::before {
+        top: -10px;
+        left: 0;
+      }
+
+      .heart::after {
+        top: 0;
+        left: 10px;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(-45deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(-45deg);
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <h1>Feliz Primer Mes, Mi Amor!</h1>
       <p>
-        Hoy celebramos nuestro primer mes juntos y quiero que sepas que cada día
-        a tu lado es un regalo. Te amo con todo mi corazón.
-      </p>
-      <img src="romantic-image.jpg" alt="Romantic Image" />
-      <p>
-        Eres la persona más especial en mi vida y estoy muy agradecido por cada
-        momento que compartimos. ¡Por muchos meses más juntos!
+        Para mi amor, en nuestro primer mes juntos: Mi queridísima [nombre de tu
+        novia], Hace apenas un mes, nuestras vidas se entrelazaron de una manera
+        mágica, y desde entonces, cada día contigo ha sido un capítulo nuevo y
+        emocionante en nuestra historia de amor. Aunque solo ha pasado un mes,
+        siento como si hubiera conocido tu alma desde siempre. Eres mi estrella
+        brillante en la noche más oscura y el sol que ilumina mis días. Tu
+        presencia transforma lo ordinario en extraordinario, y cada momento a tu
+        lado es un tesoro que guardo con cariño en mi corazón. Este primer mes
+        ha sido un viaje increíble, lleno de risas, abrazos y miradas que hablan
+        un idioma que solo nosotros entendemos. No podría haber imaginado un
+        comienzo más perfecto para nuestra aventura juntos. Prometo seguir
+        valorando cada instante contigo, amarte con todo lo que soy y construir
+        juntos recuerdos que durarán toda una vida. Gracias por ser el motivo de
+        mi sonrisa diaria, mi inspiración y mi paz. Te amo con locura y pasión,
+        más allá de lo que las palabras pueden expresar. Estoy emocionado por
+        cada día que viene, sabiendo que los compartiré contigo. Con todo mi
+        amor,
       </p>
       <p>Con todo mi amor,</p>
       <p>Tus ojos verdes</p>
+      <div class="photo-container">
+        <img src="foto.jpeg" alt="Foto romántica" class="romantic-photo" />
+      </div>
     </div>
+    <script>
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+
+      setInterval(createHeart, 300);
+    </script>
   </body>
 </html>
