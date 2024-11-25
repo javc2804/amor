@@ -101,23 +101,22 @@
     <div class="container">
       <h1>Feliz Primer Mes, Mi Amor!</h1>
       <p>
-        Para mi amor, en nuestro primer mes juntos: Mi queridísima Alejandra,
-        Hace apenas un mes, nuestras vidas se entrelazaron de una manera mágica,
-        y desde entonces, cada día contigo ha sido un capítulo nuevo y
-        emocionante en nuestra historia de amor. Aunque solo ha pasado un mes,
-        siento como si hubiera conocido tu alma desde siempre. Eres mi estrella
-        brillante en la noche más oscura y el sol que ilumina mis días. Tu
-        presencia transforma lo ordinario en extraordinario, y cada momento a tu
-        lado es un tesoro que guardo con cariño en mi corazón. Este primer mes
-        ha sido un viaje increíble, lleno de risas, abrazos y miradas que hablan
-        un idioma que solo nosotros entendemos. No podría haber imaginado un
+        Para mi amor, en nuestro primer mes juntos: Mi amada Alejandra, Hace
+        apenas un mes, nuestras vidas se entrelazaron de una manera mágica, y
+        desde entonces, cada día contigo ha sido un capítulo nuevo y emocionante
+        en nuestra historia de amor. Aunque solo ha pasado un mes, siento como
+        si hubiera conocido tu alma desde siempre. Eres mi estrella brillante en
+        la noche más oscura y el sol que ilumina mis días. Tu presencia
+        transforma lo ordinario en extraordinario, y cada momento a tu lado es
+        un tesoro que guardo con cariño en mi corazón. Este primer mes ha sido
+        un viaje increíble, lleno de risas, abrazos y miradas que hablan un
+        idioma que solo nosotros entendemos. No podría haber imaginado un
         comienzo más perfecto para nuestra aventura juntos. Prometo seguir
         valorando cada instante contigo, amarte con todo lo que soy y construir
         juntos recuerdos que durarán toda una vida. Gracias por ser el motivo de
         mi sonrisa diaria, mi inspiración y mi paz. Te amo con locura y pasión,
         más allá de lo que las palabras pueden expresar. Estoy emocionado por
-        cada día que viene, sabiendo que los compartiré contigo. Con todo mi
-        amor,
+        cada día que viene, sabiendo que los compartiré contigo.
       </p>
       <p>Con todo mi amor,</p>
       <p>Tus ojos verdes</p>
@@ -125,6 +124,10 @@
         <img src="foto.jpeg" alt="Foto romántica" class="romantic-photo" />
       </div>
     </div>
+    <audio id="background-music" autoplay loop>
+      <source src="teamo.mp3" type="audio/mpeg" />
+      Tu navegador no soporta la etiqueta de audio.
+    </audio>
     <script>
       function createHeart() {
         const heart = document.createElement("div");
@@ -138,6 +141,14 @@
       }
 
       setInterval(createHeart, 300);
+
+      // Asegura que la música se reproduzca al cargar la página
+      window.addEventListener("load", () => {
+        const audio = document.getElementById("background-music");
+        audio.play().catch((error) => {
+          console.log("Autoplay was prevented:", error);
+        });
+      });
     </script>
   </body>
 </html>
