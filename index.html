@@ -10,7 +10,7 @@
         font-family: "Cursive", sans-serif;
         color: #b30000;
         text-align: center;
-        overflow: hidden;
+        overflow-y: scroll; /* Permite el desplazamiento vertical */
       }
 
       .container {
@@ -62,6 +62,7 @@
         background-color: red;
         transform: rotate(-45deg);
         animation: float 5s infinite;
+        z-index: 2; /* Asegura que los corazones estén al frente */
       }
 
       .heart::before,
@@ -100,9 +101,9 @@
     <div class="container">
       <h1>Feliz Primer Mes, Mi Amor!</h1>
       <p>
-        Para mi amor, en nuestro primer mes juntos: Mi queridísima [nombre de tu
-        novia], Hace apenas un mes, nuestras vidas se entrelazaron de una manera
-        mágica, y desde entonces, cada día contigo ha sido un capítulo nuevo y
+        Para mi amor, en nuestro primer mes juntos: Mi queridísima Alejandra,
+        Hace apenas un mes, nuestras vidas se entrelazaron de una manera mágica,
+        y desde entonces, cada día contigo ha sido un capítulo nuevo y
         emocionante en nuestra historia de amor. Aunque solo ha pasado un mes,
         siento como si hubiera conocido tu alma desde siempre. Eres mi estrella
         brillante en la noche más oscura y el sol que ilumina mis días. Tu
